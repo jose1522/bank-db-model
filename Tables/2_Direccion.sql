@@ -1,0 +1,19 @@
+USE [BANK]
+GO
+
+CREATE TABLE [dbo].[Direccion](
+	[UUID] [int] IDENTITY(1,1) NOT NULL,
+	[Persona] INT REFERENCES PERSONA(UUID) NOT NULL,
+	[Tipo_Direccion] [int] NOT NULL REFERENCES [dbo].[Tipo_direccion] ([UUID]),
+	[Geografia] INT NOT NULL REFERENCES GEOGRAFIA(UUID),
+	[Detalle] NVARCHAR(200) NOT NULL,
+	[Fecha_inicio] [date] DEFAULT GETDATE(),
+	CONSTRAINT [PK_Direccion] PRIMARY KEY CLUSTERED 
+(
+	[UUID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
+GO
+
+--Ejemplo
+INSERT INTO Direccion VALUES (2, 1, '01/06/2017');
