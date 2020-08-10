@@ -12,6 +12,19 @@ CREATE TABLE [dbo].[Moneda](
 ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_moneda(
+	UUID,
+	Nombre,
+	Codigo
+) AS
+SELECT
+	UUID,
+	Nombre,
+	Codigo
+FROM
+	Moneda
+GO
+
 --Ejemplos
 Insert into Moneda Values('UAE Dirham','AED')
 Insert into Moneda Values('Afghani','AFN')

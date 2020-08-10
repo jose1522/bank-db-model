@@ -15,6 +15,25 @@ CREATE TABLE [dbo].[Telefono](
 	) ON [PRIMARY]
 GO
 
+Create view view_telefono(
+	UUID,
+	Tipo_telefono,
+    Area,
+    Numero,
+	Instrucciones,
+	Solicitado
+) AS
+SELECT
+	UUID,
+	Tipo_telefono,
+    Area,
+    Numero,
+	Instrucciones,
+	Solicitado
+FROM
+	Telefono
+GO
+
 --Ejemplo
 INSERT INTO Telefono VALUES (2, 506, 88882221, 'Instrucciones', 'Si');
 INSERT INTO Telefono VALUES (2, 506, 88882222, 'Instrucciones', 'Si');

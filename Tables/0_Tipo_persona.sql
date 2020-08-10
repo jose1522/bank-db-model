@@ -11,6 +11,17 @@ CREATE TABLE [dbo].[Tipo_persona](
 ) ON [PRIMARY]--Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_tipo_persona(
+	UUID,
+	Nombre
+) AS
+SELECT
+	UUID,
+	Nombre
+FROM
+	Tipo_persona
+GO
+
 --Registros
 INSERT INTO Tipo_persona VALUES ('Fisica');
 INSERT INTO Tipo_persona VALUES ('Juridica');

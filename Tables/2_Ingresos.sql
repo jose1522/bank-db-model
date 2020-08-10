@@ -25,6 +25,33 @@ CREATE TABLE [dbo].[Ingresos](
 	) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_ingresos(
+	ID,
+	Fecha_Ingreso,
+	Moneda,
+	Persona,
+	Ingreso_bruto,
+	Ingreso_neto,
+	Ingreso_familiar,
+	Es_planilla,
+	Otros_ingresos,
+	Otros_ingresos_declarados
+) AS
+SELECT
+	ID,
+	Fecha_Ingreso,
+	Moneda,
+	Persona,
+	Ingreso_bruto,
+	Ingreso_neto,
+	Ingreso_familiar,
+	Es_planilla,
+	Otros_ingresos,
+	Otros_ingresos_declarados
+FROM
+	Ingresos
+GO
+
 --Ejemplo
 INSERT INTO INGRESOS (MONEDA,PERSONA,Ingreso_bruto,Ingreso_neto,Ingreso_familiar,Es_planilla) VALUES (37,1,1250180,1000144,1250180,'Si');
 INSERT INTO INGRESOS (MONEDA,PERSONA,Ingreso_bruto,Ingreso_neto,Ingreso_familiar,Es_planilla) VALUES (37,2,768833,615066.4,1073277.07,'Si');

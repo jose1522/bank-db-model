@@ -5,6 +5,19 @@ CREATE TABLE OCUPACION(
     UUID INT IDENTITY(1,1) PRIMARY KEY,
     TIPO NVARCHAR(100) NOT NULL
 )
+GO
+
+Create view view_ocupacion(
+	UUID,
+	TIPO
+) AS
+SELECT
+	UUID,
+	TIPO
+FROM
+	OCUPACION
+GO
+
 
 INSERT INTO OCUPACION VALUES('Acomodador (cines, teatros, etc.)');
 INSERT INTO OCUPACION VALUES('Acompañante en buseta escolar');

@@ -1,13 +1,6 @@
 USE [BANK]
 GO
 
-/****** Object:  Table [dbo].[Clasificacion_riesgo]    Script Date: 4/8/2020 22:30:24 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 CREATE TABLE [dbo].[Clasificacion_riesgo](
 	[UUID] [int] IDENTITY(1,1) NOT NULL,
 	[Clasificacion] NVARCHAR(2) NOT NULL,
@@ -18,6 +11,16 @@ CREATE TABLE [dbo].[Clasificacion_riesgo](
 ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_clasificacion_riesgo(
+	UUID,
+	CLASIFICACION
+) AS
+SELECT
+	UUID,
+	CLASIFICACION
+FROM
+	Clasificacion_riesgo
+GO
 
 --Registros
 INSERT INTO Clasificacion_riesgo VALUES ('A1');

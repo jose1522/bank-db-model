@@ -8,5 +8,16 @@ CREATE TABLE GENERO(
 )
 GO
 
+Create view view_genero(
+	UUID,
+	TIPO
+) AS
+SELECT
+	UUID,
+	TIPO
+FROM
+	genero
+GO
+
 INSERT INTO GENERO VALUES ('Femenino');
 INSERT INTO GENERO VALUES ('Masculino');

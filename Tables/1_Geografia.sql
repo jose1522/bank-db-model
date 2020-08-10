@@ -10,6 +10,21 @@ CREATE TABLE [dbo].[Geografia](
 ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_geografia(
+	UUID,
+	TIPO_GEOGRAFIA,
+	NOMBRE,
+	PADRE
+) AS
+SELECT
+	UUID,
+	TIPO_GEOGRAFIA,
+	NOMBRE,
+	PADRE
+FROM
+	Geografia
+GO
+
 --Ejemplo
 INSERT INTO Geografia (TIPO_GEOGRAFIA, NOMBRE, PADRE) VALUES (1, 'Costa Rica', null);
 

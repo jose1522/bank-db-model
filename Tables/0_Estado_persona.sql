@@ -8,6 +8,17 @@ CREATE TABLE [dbo].[Estado_persona](
 ) ON [PRIMARY]--Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_estado_persona(
+	UUID,
+	Nombre
+) AS
+SELECT
+	UUID,
+	Nombre
+FROM
+	Estado_persona
+GO
+
 --Registros
 INSERT INTO Estado_persona VALUES ('Activo');
 INSERT INTO Estado_persona VALUES ('Inactivo');

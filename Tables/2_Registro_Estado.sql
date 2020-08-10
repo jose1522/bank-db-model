@@ -14,6 +14,21 @@ CREATE TABLE [dbo].[REGISTRO_ESTADO](
         ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_registro_estado(
+	UUID,
+	Fecha_Ingreso,
+    Descripcion,
+    Persona
+) AS
+SELECT
+	UUID,
+	Fecha_Ingreso,
+    Descripcion,
+    Persona
+FROM
+	REGISTRO_ESTADO
+GO
+
 INSERT INTO REGISTRO_ESTADO (DESCRIPCION, PERSONA) VALUES ('USUARIO EN ESTADO ACTIVO',1);
 INSERT INTO REGISTRO_ESTADO (DESCRIPCION, PERSONA) VALUES ('USUARIO EN ESTADO Activo',1);
 INSERT INTO REGISTRO_ESTADO (DESCRIPCION, PERSONA) VALUES ('USUARIO EN ESTADO Activo',2);

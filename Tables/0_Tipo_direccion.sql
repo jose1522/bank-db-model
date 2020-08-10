@@ -11,6 +11,19 @@ CREATE TABLE [dbo].[Tipo_direccion](
 ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+
+Create view view_tipo_direccion(
+	UUID,
+	DESCRIPCION
+) AS
+SELECT
+	UUID,
+	DESCRIPCION
+FROM
+	Tipo_direccion
+GO
+
+
 --Ejemplo
 INSERT INTO Tipo_direccion VALUES ('Domiciliar');
 INSERT INTO Tipo_direccion VALUES ('Oficina');

@@ -11,6 +11,17 @@ CREATE TABLE [dbo].[Tipo_telefono](
 ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_tipo_telefono(
+	UUID,
+	Descripcion
+) AS
+SELECT
+	UUID,
+	Descripcion
+FROM
+	Tipo_telefono
+GO
+
 --Ejemplos
 INSERT INTO Tipo_telefono VALUES ('Movil');
 INSERT INTO Tipo_telefono VALUES ('Casa');

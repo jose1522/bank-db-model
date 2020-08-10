@@ -15,6 +15,25 @@ CREATE TABLE [dbo].[Direccion](
 ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_direccion(
+	UUID,
+	Persona,
+	Tipo_Direccion,
+	Geografia,
+	Detalle,
+	Fecha_inicio
+) AS
+SELECT
+	UUID,
+	Persona,
+	Tipo_Direccion,
+	Geografia,
+	Detalle,
+	Fecha_inicio
+FROM
+	Direccion
+GO
+
 --Ejemplo
 INSERT INTO Direccion (Persona, Tipo_Direccion, Geografia, Detalle) VALUES (1,1, 91, 'Direccion de prueba');
 INSERT INTO Direccion (Persona, Tipo_Direccion, Geografia, Detalle) VALUES (2,1, 96, 'Direccion de prueba');

@@ -15,6 +15,25 @@ CREATE TABLE [dbo].[Identificacion](
 ) ON [PRIMARY]--Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_identificacion(
+	UUID,
+	PERSONA,
+	GEOGRAFIA_ID,
+	TIPO,
+	ID,
+	FECHA_VENCIMIENTO
+) AS
+SELECT
+	UUID,
+	PERSONA,
+	GEOGRAFIA_ID,
+	TIPO,
+	ID,
+	FECHA_VENCIMIENTO
+FROM
+	Identificacion
+GO
+
 --Registros
 INSERT INTO identificacion VALUES (1,1,1,1000001,'2025/01/01');
 INSERT INTO identificacion VALUES (2,1,1,1000002,'2025/01/01');

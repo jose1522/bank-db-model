@@ -15,6 +15,24 @@ CREATE TABLE [dbo].[Email](
 ) ON [PRIMARY] --Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_email(
+	ID,
+	Persona,
+	Email,
+	Instrucciones,
+	Solicitado
+) AS
+SELECT
+	ID,
+	Persona,
+	Email,
+	Instrucciones,
+	Solicitado
+FROM
+	Email
+GO
+
+
 --Ejemplo
 INSERT INTO Email VALUES (1,'abc1@gmail.com', 'Instrucciones', 'Si');
 INSERT INTO Email VALUES (2,'abc2@gmail.com', 'Instrucciones', 'Si');

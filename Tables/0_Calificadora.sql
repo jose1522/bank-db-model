@@ -11,6 +11,17 @@ CREATE TABLE [dbo].[Tipo_Calificadora](
 ) ON [PRIMARY]--Luego se especifica a que FG ir� segun modelo f�sico
 GO
 
+Create view view_tipo_calificadora(
+	UUID,
+	NOMBRE
+) as 
+SELECT
+	UUID,
+	NOMBRE
+FROM
+	Tipo_Calificadora
+GO
+
 --Registros
 INSERT INTO Tipo_Calificadora VALUES ('SUGEF');
 INSERT INTO Tipo_Calificadora VALUES ('Banco');
