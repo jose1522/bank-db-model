@@ -2,8 +2,8 @@ USE [BANK]
 GO
 
 CREATE TABLE [dbo].[Tipo_persona](
-	[UUID] [int] IDENTITY(1,1) NOT NULL,
-	[Nombre] NVARCHAR(10) NOT NULL,
+	[UUID] [int] IDENTITY (1,1) NOT NULL,
+	[Nombre] NVARCHAR (10) NOT NULL,
  	CONSTRAINT [PK_Tipo_persona] PRIMARY KEY CLUSTERED 
 (
 	[UUID] ASC
