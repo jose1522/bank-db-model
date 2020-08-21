@@ -30,7 +30,10 @@ CREATE TABLE [dbo].[Estado_cuenta](
 ) ON [PRIMARY]
 GO
 
-
+CREATE INDEX INDEX_Estado_cuenta on Estado_cuenta (	
+    [Operacion]
+)
+GO
 
 Create view view_estado_cuenta(
 	UUID,	
